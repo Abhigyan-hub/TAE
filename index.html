@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Models & Concepts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Software Engineering Models & Concepts</h1>
+            <p class="subtitle">Comprehensive Guide to Software Development Models</p>
+        </header>
+
+        <nav class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#q1">Q.1. V Process Model & Incremental Process Model</a></li>
+                <li><a href="#q1-scrum">Q.1. Scrum Model</a></li>
+                <li><a href="#q2">Q.2. Agile Development</a></li>
+                <li><a href="#q3">Q.3. Software Requirement Specification (SRS)</a></li>
+                <li><a href="#q4">Q.4. Requirements Elicitation Techniques</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- Q.1 V Process Model & Incremental Process Model -->
+            <section id="q1" class="question-section">
+                <h2>Q.1. Explain the following models with neat diagram:</h2>
+                
+                <div class="model-section">
+                    <h3>V Process Model (V-Model)</h3>
+                    <p>The V-Model is a software development model that represents the relationship between each phase of the development life cycle and its associated phase of testing. The model is named "V" because of its V-shaped structure, where the left side represents the development phases and the right side represents the testing phases.</p>
+                    
+                    <h4>Key Characteristics:</h4>
+                    <ul>
+                        <li><strong>Sequential Process:</strong> Each phase must be completed before moving to the next</li>
+                        <li><strong>Verification & Validation:</strong> Each development phase has a corresponding testing phase</li>
+                        <li><strong>Emphasis on Testing:</strong> Testing is planned in parallel with development</li>
+                        <li><strong>Documentation:</strong> Requires extensive documentation at each stage</li>
+                    </ul>
+
+                    <h4>Phases:</h4>
+                    <div class="phases-list">
+                        <div class="phase-pair">
+                            <div class="phase-left">
+                                <strong>Development Phases (Left Side):</strong>
+                                <ol>
+                                    <li>Requirements Analysis</li>
+                                    <li>System Design</li>
+                                    <li>Architecture Design</li>
+                                    <li>Module Design</li>
+                                    <li>Implementation</li>
+                                </ol>
+                            </div>
+                            <div class="phase-right">
+                                <strong>Testing Phases (Right Side):</strong>
+                                <ol>
+                                    <li>Acceptance Testing</li>
+                                    <li>System Testing</li>
+                                    <li>Integration Testing</li>
+                                    <li>Unit Testing</li>
+                                    <li>Code</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-container">
+                        <h4>V Process Model Diagram:</h4>
+                        <svg id="v-model-diagram" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Left side - Development -->
+                            <line x1="100" y1="50" x2="400" y2="300" stroke="#4A90E2" stroke-width="3"/>
+                            <line x1="100" y1="50" x2="150" y2="120" stroke="#4A90E2" stroke-width="3"/>
+                            <line x1="150" y1="120" x2="250" y2="200" stroke="#4A90E2" stroke-width="3"/>
+                            <line x1="250" y1="200" x2="350" y2="280" stroke="#4A90E2" stroke-width="3"/>
+                            <line x1="350" y1="280" x2="400" y2="300" stroke="#4A90E2" stroke-width="3"/>
+                            
+                            <!-- Right side - Testing -->
+                            <line x1="400" y1="300" x2="700" y2="50" stroke="#E24A4A" stroke-width="3"/>
+                            <line x1="400" y1="300" x2="650" y2="120" stroke="#E24A4A" stroke-width="3"/>
+                            <line x1="650" y1="120" x2="550" y2="200" stroke="#E24A4A" stroke-width="3"/>
+                            <line x1="550" y1="200" x2="450" y2="280" stroke="#E24A4A" stroke-width="3"/>
+                            <line x1="450" y1="280" x2="400" y2="300" stroke="#E24A4A" stroke-width="3"/>
+                            
+                            <!-- Development Phase Boxes -->
+                            <rect x="20" y="30" width="160" height="40" fill="#4A90E2" rx="5"/>
+                            <text x="100" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Requirements Analysis</text>
+                            
+                            <rect x="80" y="100" width="140" height="40" fill="#4A90E2" rx="5"/>
+                            <text x="150" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">System Design</text>
+                            
+                            <rect x="180" y="180" width="140" height="40" fill="#4A90E2" rx="5"/>
+                            <text x="250" y="205" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Architecture Design</text>
+                            
+                            <rect x="280" y="260" width="140" height="40" fill="#4A90E2" rx="5"/>
+                            <text x="350" y="285" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Module Design</text>
+                            
+                            <rect x="320" y="280" width="160" height="40" fill="#4A90E2" rx="5"/>
+                            <text x="400" y="305" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Implementation</text>
+                            
+                            <!-- Testing Phase Boxes -->
+                            <rect x="620" y="30" width="160" height="40" fill="#E24A4A" rx="5"/>
+                            <text x="700" y="55" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Acceptance Testing</text>
+                            
+                            <rect x="560" y="100" width="140" height="40" fill="#E24A4A" rx="5"/>
+                            <text x="630" y="125" text-anchor="middle" fill="white" font-size="12" font-weight="bold">System Testing</text>
+                            
+                            <rect x="460" y="180" width="140" height="40" fill="#E24A4A" rx="5"/>
+                            <text x="530" y="205" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Integration Testing</text>
+                            
+                            <rect x="360" y="260" width="140" height="40" fill="#E24A4A" rx="5"/>
+                            <text x="430" y="285" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Unit Testing</text>
+                            
+                            <!-- Labels -->
+                            <text x="100" y="20" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Development</text>
+                            <text x="700" y="20" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Testing</text>
+                        </svg>
+                    </div>
+
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Clear relationship between development and testing phases</li>
+                        <li>Early test planning reduces defects</li>
+                        <li>Well-suited for projects with clear requirements</li>
+                        <li>Emphasizes verification and validation</li>
+                    </ul>
+
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Rigid and inflexible</li>
+                        <li>Not suitable for projects with changing requirements</li>
+                        <li>No early prototypes</li>
+                        <li>High risk and uncertainty</li>
+                    </ul>
+                </div>
+
+                <div class="model-section">
+                    <h3>Incremental Process Model</h3>
+                    <p>The Incremental Process Model is a method of software development where the product is designed, implemented, and tested incrementally (a little more is added each time) until the product is finished. It involves both development and maintenance. The product is defined as finished when it satisfies all of its requirements.</p>
+                    
+                    <h4>Key Characteristics:</h4>
+                    <ul>
+                        <li><strong>Iterative Development:</strong> System is built in increments</li>
+                        <li><strong>Early Delivery:</strong> Working software is delivered early</li>
+                        <li><strong>User Feedback:</strong> Each increment incorporates user feedback</li>
+                        <li><strong>Risk Management:</strong> High-risk parts are developed first</li>
+                    </ul>
+
+                    <h4>Phases in Each Increment:</h4>
+                    <ol>
+                        <li><strong>Requirements Analysis:</strong> Analyze requirements for the current increment</li>
+                        <li><strong>Design:</strong> Design the features for the current increment</li>
+                        <li><strong>Implementation:</strong> Code the features</li>
+                        <li><strong>Testing:</strong> Test the increment</li>
+                        <li><strong>Integration:</strong> Integrate with previous increments</li>
+                        <li><strong>Deployment:</strong> Deploy the increment to users</li>
+                    </ol>
+
+                    <div class="diagram-container">
+                        <h4>Incremental Process Model Diagram:</h4>
+                        <svg id="incremental-diagram" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Increment 1 -->
+                            <rect x="50" y="50" width="150" height="80" fill="#5CB85C" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="125" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Increment 1</text>
+                            <text x="125" y="95" text-anchor="middle" fill="white" font-size="10">Requirements</text>
+                            <text x="125" y="110" text-anchor="middle" fill="white" font-size="10">Design</text>
+                            <text x="125" y="125" text-anchor="middle" fill="white" font-size="10">Code & Test</text>
+                            
+                            <!-- Increment 2 -->
+                            <rect x="250" y="50" width="150" height="80" fill="#5CB85C" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="325" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Increment 2</text>
+                            <text x="325" y="95" text-anchor="middle" fill="white" font-size="10">Requirements</text>
+                            <text x="325" y="110" text-anchor="middle" fill="white" font-size="10">Design</text>
+                            <text x="325" y="125" text-anchor="middle" fill="white" font-size="10">Code & Test</text>
+                            
+                            <!-- Increment 3 -->
+                            <rect x="450" y="50" width="150" height="80" fill="#5CB85C" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="525" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Increment 3</text>
+                            <text x="525" y="95" text-anchor="middle" fill="white" font-size="10">Requirements</text>
+                            <text x="525" y="110" text-anchor="middle" fill="white" font-size="10">Design</text>
+                            <text x="525" y="125" text-anchor="middle" fill="white" font-size="10">Code & Test</text>
+                            
+                            <!-- Increment 4 -->
+                            <rect x="650" y="50" width="150" height="80" fill="#5CB85C" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="725" y="75" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Increment 4</text>
+                            <text x="725" y="95" text-anchor="middle" fill="white" font-size="10">Requirements</text>
+                            <text x="725" y="110" text-anchor="middle" fill="white" font-size="10">Design</text>
+                            <text x="725" y="125" text-anchor="middle" fill="white" font-size="10">Code & Test</text>
+                            
+                            <!-- Arrows between increments -->
+                            <path d="M 200 90 L 250 90" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 400 90 L 450 90" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            <path d="M 600 90 L 650 90" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                            
+                            <!-- Integration lines -->
+                            <line x1="125" y1="130" x2="125" y2="200" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="325" y1="130" x2="325" y2="200" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="525" y1="130" x2="525" y2="200" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5"/>
+                            <line x1="725" y1="130" x2="725" y2="200" stroke="#FF6B6B" stroke-width="2" stroke-dasharray="5,5"/>
+                            
+                            <!-- Final Product -->
+                            <rect x="300" y="200" width="300" height="100" fill="#FFA500" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="450" y="230" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Final Product</text>
+                            <text x="450" y="250" text-anchor="middle" fill="white" font-size="12">All Increments</text>
+                            <text x="450" y="270" text-anchor="middle" fill="white" font-size="12">Integrated</text>
+                            <text x="450" y="290" text-anchor="middle" fill="white" font-size="12">System</text>
+                            
+                            <!-- Arrow marker definition -->
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+                                </marker>
+                            </defs>
+                            
+                            <!-- Labels -->
+                            <text x="450" y="40" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Development Increments</text>
+                            <text x="450" y="330" text-anchor="middle" fill="#333" font-size="12">Time →</text>
+                        </svg>
+                    </div>
+
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Working software is delivered early</li>
+                        <li>Flexible and can adapt to changing requirements</li>
+                        <li>Lower initial delivery cost</li>
+                        <li>Easier to test and debug</li>
+                        <li>Customer can use early increments</li>
+                    </ul>
+
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Requires good planning and design</li>
+                        <li>Total cost may be higher</li>
+                        <li>Requires well-defined interfaces</li>
+                        <li>Management complexity increases</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Q.1 Scrum Model -->
+            <section id="q1-scrum" class="question-section">
+                <h2>Q.1. Explain the following Scrum Model with diagram</h2>
+                
+                <div class="model-section">
+                    <h3>Scrum Model</h3>
+                    <p>Scrum is an agile framework for managing knowledge work, with an emphasis on software development. It is designed for teams of three to nine developers who break their work into actions that can be completed within time-boxed iterations, called "sprints" (typically 2–4 weeks), and track progress and re-plan in 15-minute stand-up meetings, called daily scrums.</p>
+                    
+                    <h4>Key Components:</h4>
+                    <ul>
+                        <li><strong>Sprint:</strong> A time-boxed iteration (usually 2-4 weeks)</li>
+                        <li><strong>Product Backlog:</strong> Prioritized list of features and requirements</li>
+                        <li><strong>Sprint Backlog:</strong> Items selected for the current sprint</li>
+                        <li><strong>Daily Scrum:</strong> 15-minute daily team meeting</li>
+                        <li><strong>Sprint Review:</strong> Demonstration of completed work</li>
+                        <li><strong>Sprint Retrospective:</strong> Team reflection and improvement</li>
+                    </ul>
+
+                    <h4>Scrum Roles:</h4>
+                    <ul>
+                        <li><strong>Product Owner:</strong> Represents stakeholders and manages product backlog</li>
+                        <li><strong>Scrum Master:</strong> Facilitates the Scrum process and removes impediments</li>
+                        <li><strong>Development Team:</strong> Self-organizing team that delivers the product</li>
+                    </ul>
+
+                    <div class="diagram-container">
+                        <h4>Scrum Model Diagram:</h4>
+                        <svg id="scrum-diagram" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Product Backlog -->
+                            <rect x="50" y="50" width="200" height="150" fill="#4A90E2" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="150" y="80" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Product Backlog</text>
+                            <text x="150" y="105" text-anchor="middle" fill="white" font-size="11">Feature 1</text>
+                            <text x="150" y="125" text-anchor="middle" fill="white" font-size="11">Feature 2</text>
+                            <text x="150" y="145" text-anchor="middle" fill="white" font-size="11">Feature 3</text>
+                            <text x="150" y="165" text-anchor="middle" fill="white" font-size="11">Feature 4</text>
+                            <text x="150" y="185" text-anchor="middle" fill="white" font-size="11">...</text>
+                            
+                            <!-- Sprint Planning -->
+                            <rect x="350" y="50" width="200" height="150" fill="#5CB85C" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="450" y="80" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Sprint Planning</text>
+                            <text x="450" y="110" text-anchor="middle" fill="white" font-size="11">Select items from</text>
+                            <text x="450" y="130" text-anchor="middle" fill="white" font-size="11">Product Backlog</text>
+                            <text x="450" y="150" text-anchor="middle" fill="white" font-size="11">Create Sprint</text>
+                            <text x="450" y="170" text-anchor="middle" fill="white" font-size="11">Backlog</text>
+                            <text x="450" y="190" text-anchor="middle" fill="white" font-size="11">(2-4 weeks)</text>
+                            
+                            <!-- Sprint Backlog -->
+                            <rect x="650" y="50" width="200" height="150" fill="#FFA500" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="750" y="80" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Sprint Backlog</text>
+                            <text x="750" y="110" text-anchor="middle" fill="white" font-size="11">Task 1</text>
+                            <text x="750" y="130" text-anchor="middle" fill="white" font-size="11">Task 2</text>
+                            <text x="750" y="150" text-anchor="middle" fill="white" font-size="11">Task 3</text>
+                            <text x="750" y="170" text-anchor="middle" fill="white" font-size="11">...</text>
+                            
+                            <!-- Arrows -->
+                            <path d="M 250 125 L 350 125" stroke="#333" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                            <path d="M 550 125 L 650 125" stroke="#333" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                            
+                            <!-- Sprint Cycle -->
+                            <rect x="300" y="250" width="400" height="350" fill="#F0F0F0" rx="10" stroke="#333" stroke-width="3"/>
+                            <text x="500" y="280" text-anchor="middle" fill="#333" font-size="18" font-weight="bold">Sprint Cycle (2-4 weeks)</text>
+                            
+                            <!-- Daily Scrum -->
+                            <circle cx="400" cy="350" r="50" fill="#E24A4A" stroke="#333" stroke-width="2"/>
+                            <text x="400" y="345" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Daily</text>
+                            <text x="400" y="360" text-anchor="middle" fill="white" font-size="11" font-weight="bold">Scrum</text>
+                            <text x="400" y="375" text-anchor="middle" fill="white" font-size="10">15 min</text>
+                            
+                            <!-- Development -->
+                            <rect x="500" y="320" width="150" height="100" fill="#9B59B6" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="575" y="345" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Development</text>
+                            <text x="575" y="370" text-anchor="middle" fill="white" font-size="11">Design</text>
+                            <text x="575" y="390" text-anchor="middle" fill="white" font-size="11">Code</text>
+                            <text x="575" y="410" text-anchor="middle" fill="white" font-size="11">Test</text>
+                            
+                            <!-- Sprint Review -->
+                            <rect x="350" y="450" width="150" height="80" fill="#16A085" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="425" y="480" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Sprint Review</text>
+                            <text x="425" y="505" text-anchor="middle" fill="white" font-size="11">Demonstrate</text>
+                            <text x="425" y="525" text-anchor="middle" fill="white" font-size="11">Working Product</text>
+                            
+                            <!-- Sprint Retrospective -->
+                            <rect x="550" y="450" width="150" height="80" fill="#E67E22" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="625" y="480" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Sprint</text>
+                            <text x="625" y="500" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Retrospective</text>
+                            <text x="625" y="520" text-anchor="middle" fill="white" font-size="11">Improve Process</text>
+                            
+                            <!-- Increment -->
+                            <rect x="700" y="300" width="200" height="100" fill="#27AE60" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="800" y="330" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Increment</text>
+                            <text x="800" y="355" text-anchor="middle" fill="white" font-size="12">Working Product</text>
+                            <text x="800" y="375" text-anchor="middle" fill="white" font-size="12">Potentially</text>
+                            <text x="800" y="395" text-anchor="middle" fill="white" font-size="12">Shippable</text>
+                            
+                            <!-- Arrow from sprint to increment -->
+                            <path d="M 700 350 L 700 350" stroke="#333" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                            <path d="M 700 350 L 700 350" stroke="#333" stroke-width="3" marker-end="url(#arrowhead2)"/>
+                            
+                            <!-- Circular arrows for daily scrum -->
+                            <path d="M 400 300 Q 350 300 350 350 Q 350 400 400 400" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                            <path d="M 400 400 Q 450 400 450 350 Q 450 300 400 300" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                            
+                            <!-- Arrow from increment back to product backlog -->
+                            <path d="M 700 350 Q 850 350 850 125 Q 850 50 250 125" stroke="#333" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowhead2)"/>
+                            
+                            <!-- Roles -->
+                            <rect x="50" y="450" width="200" height="150" fill="#ECF0F1" rx="5" stroke="#333" stroke-width="2"/>
+                            <text x="150" y="480" text-anchor="middle" fill="#333" font-size="14" font-weight="bold">Scrum Roles</text>
+                            <text x="150" y="510" text-anchor="middle" fill="#333" font-size="12">• Product Owner</text>
+                            <text x="150" y="535" text-anchor="middle" fill="#333" font-size="12">• Scrum Master</text>
+                            <text x="150" y="560" text-anchor="middle" fill="#333" font-size="12">• Development Team</text>
+                            <text x="150" y="585" text-anchor="middle" fill="#333" font-size="12">(3-9 members)</text>
+                            
+                            <!-- Arrow marker definition -->
+                            <defs>
+                                <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                    <polygon points="0 0, 10 3, 0 6" fill="#333"/>
+                                </marker>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <h4>Scrum Events:</h4>
+                    <ul>
+                        <li><strong>Sprint Planning:</strong> Team plans work for the sprint</li>
+                        <li><strong>Daily Scrum:</strong> 15-minute daily synchronization meeting</li>
+                        <li><strong>Sprint Review:</strong> Team demonstrates completed work to stakeholders</li>
+                        <li><strong>Sprint Retrospective:</strong> Team reflects on the sprint and identifies improvements</li>
+                    </ul>
+
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Flexible and adaptable to change</li>
+                        <li>Early and continuous delivery</li>
+                        <li>Improved team collaboration</li>
+                        <li>Transparency and visibility</li>
+                        <li>Continuous improvement</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Q.2 Agile Development -->
+            <section id="q2" class="question-section">
+                <h2>Q.2. What is Agile Development? List its benefits</h2>
+                
+                <div class="model-section">
+                    <h3>Agile Development</h3>
+                    <p>Agile Development is a software development methodology that emphasizes flexibility, collaboration, customer feedback, and rapid delivery of working software. It is based on the Agile Manifesto, which values:</p>
+                    
+                    <div class="manifesto-box">
+                        <h4>The Agile Manifesto Values:</h4>
+                        <ul>
+                            <li><strong>Individuals and interactions</strong> over processes and tools</li>
+                            <li><strong>Working software</strong> over comprehensive documentation</li>
+                            <li><strong>Customer collaboration</strong> over contract negotiation</li>
+                            <li><strong>Responding to change</strong> over following a plan</li>
+                        </ul>
+                    </div>
+
+                    <h4>Key Principles of Agile:</h4>
+                    <ol>
+                        <li>Customer satisfaction through early and continuous software delivery</li>
+                        <li>Welcome changing requirements, even late in development</li>
+                        <li>Deliver working software frequently (weeks rather than months)</li>
+                        <li>Business people and developers must work together daily</li>
+                        <li>Build projects around motivated individuals</li>
+                        <li>The most efficient method of conveying information is face-to-face conversation</li>
+                        <li>Working software is the primary measure of progress</li>
+                        <li>Agile processes promote sustainable development</li>
+                        <li>Continuous attention to technical excellence and good design</li>
+                        <li>Simplicity—the art of maximizing the amount of work not done</li>
+                        <li>Self-organizing teams produce the best architectures and designs</li>
+                        <li>At regular intervals, the team reflects on how to become more effective</li>
+                    </ol>
+
+                    <h4>Benefits of Agile Development:</h4>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <h5>1. Faster Time to Market</h5>
+                            <p>Agile enables rapid delivery of working software, allowing businesses to respond quickly to market opportunities and gain competitive advantages.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>2. Improved Quality</h5>
+                            <p>Continuous testing and integration throughout the development process help identify and fix defects early, resulting in higher quality software.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>3. Enhanced Customer Satisfaction</h5>
+                            <p>Regular customer feedback and involvement ensure that the product meets customer needs and expectations.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>4. Better Risk Management</h5>
+                            <p>Short iterations and frequent releases help identify and mitigate risks early in the development process.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>5. Increased Flexibility</h5>
+                            <p>Agile methodologies accommodate changing requirements, allowing teams to adapt to evolving business needs.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>6. Better Project Visibility</h5>
+                            <p>Regular demonstrations and progress updates provide stakeholders with clear visibility into project status.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>7. Improved Team Collaboration</h5>
+                            <p>Daily stand-ups and close collaboration foster better communication and teamwork among team members.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>8. Reduced Costs</h5>
+                            <p>Early detection of issues and efficient resource utilization help reduce overall project costs.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>9. Higher Productivity</h5>
+                            <p>Self-organizing teams and clear priorities lead to increased productivity and efficiency.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>10. Continuous Improvement</h5>
+                            <p>Regular retrospectives enable teams to continuously improve their processes and practices.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>11. Better Alignment with Business Goals</h5>
+                            <p>Close collaboration with stakeholders ensures that development efforts align with business objectives.</p>
+                        </div>
+                        <div class="benefit-card">
+                            <h5>12. Early ROI (Return on Investment)</h5>
+                            <p>Frequent releases of working software allow businesses to realize value and ROI earlier in the project lifecycle.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Q.3 SRS Structure -->
+            <section id="q3" class="question-section">
+                <h2>Q.3. Describe the structure of Software Requirement Specification (SRS)</h2>
+                
+                <div class="model-section">
+                    <h3>Software Requirement Specification (SRS)</h3>
+                    <p>A Software Requirements Specification (SRS) is a comprehensive document that describes the functional and non-functional requirements of a software system. It serves as a contract between the customer and the development team, providing a detailed description of what the software should do.</p>
+                    
+                    <h4>Structure of SRS Document:</h4>
+                    
+                    <div class="srs-structure">
+                        <div class="srs-section">
+                            <h5>1. Introduction</h5>
+                            <ul>
+                                <li><strong>1.1 Purpose:</strong> Describes the purpose of the SRS document</li>
+                                <li><strong>1.2 Scope:</strong> Defines the scope of the software product</li>
+                                <li><strong>1.3 Definitions, Acronyms, and Abbreviations:</strong> Lists terms and abbreviations used</li>
+                                <li><strong>1.4 References:</strong> Lists related documents and standards</li>
+                                <li><strong>1.5 Overview:</strong> Provides an overview of the document structure</li>
+                            </ul>
+                        </div>
+
+                        <div class="srs-section">
+                            <h5>2. Overall Description</h5>
+                            <ul>
+                                <li><strong>2.1 Product Perspective:</strong> Describes the system's relationship with other systems</li>
+                                <li><strong>2.2 Product Functions:</strong> Summarizes the major functions of the product</li>
+                                <li><strong>2.3 User Characteristics:</strong> Describes the intended users and their characteristics</li>
+                                <li><strong>2.4 Constraints:</strong> Lists constraints such as hardware, software, regulatory, etc.</li>
+                                <li><strong>2.5 Assumptions and Dependencies:</strong> Documents assumptions and external dependencies</li>
+                                <li><strong>2.6 Apportioning of Requirements:</strong> Identifies requirements that may be delayed</li>
+                            </ul>
+                        </div>
+
+                        <div class="srs-section">
+                            <h5>3. Specific Requirements</h5>
+                            <ul>
+                                <li><strong>3.1 Functional Requirements:</strong>
+                                    <ul>
+                                        <li>Detailed description of each function</li>
+                                        <li>Inputs and outputs</li>
+                                        <li>Processing requirements</li>
+                                        <li>Error handling</li>
+                                    </ul>
+                                </li>
+                                <li><strong>3.2 Non-Functional Requirements:</strong>
+                                    <ul>
+                                        <li>Performance requirements</li>
+                                        <li>Security requirements</li>
+                                        <li>Reliability requirements</li>
+                                        <li>Usability requirements</li>
+                                        <li>Portability requirements</li>
+                                        <li>Maintainability requirements</li>
+                                    </ul>
+                                </li>
+                                <li><strong>3.3 Interface Requirements:</strong>
+                                    <ul>
+                                        <li>User interfaces</li>
+                                        <li>Hardware interfaces</li>
+                                        <li>Software interfaces</li>
+                                        <li>Communication interfaces</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="srs-section">
+                            <h5>4. System Models</h5>
+                            <ul>
+                                <li><strong>4.1 Use Case Diagrams:</strong> Visual representation of system interactions</li>
+                                <li><strong>4.2 Data Flow Diagrams:</strong> Shows data flow through the system</li>
+                                <li><strong>4.3 Entity Relationship Diagrams:</strong> Describes data structure</li>
+                                <li><strong>4.4 State Diagrams:</strong> Represents system states and transitions</li>
+                            </ul>
+                        </div>
+
+                        <div class="srs-section">
+                            <h5>5. Appendices</h5>
+                            <ul>
+                                <li><strong>5.1 Glossary:</strong> Definitions of technical terms</li>
+                                <li><strong>5.2 Sample I/O Formats:</strong> Examples of input/output formats</li>
+                                <li><strong>5.3 Analysis Models:</strong> Additional diagrams and models</li>
+                                <li><strong>5.4 Change History:</strong> Document revision history</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h4>Key Characteristics of a Good SRS:</h4>
+                    <ul>
+                        <li><strong>Complete:</strong> All requirements are specified</li>
+                        <li><strong>Consistent:</strong> No contradictions between requirements</li>
+                        <li><strong>Unambiguous:</strong> Each requirement has only one interpretation</li>
+                        <li><strong>Verifiable:</strong> Requirements can be tested</li>
+                        <li><strong>Modifiable:</strong> Easy to update and maintain</li>
+                        <li><strong>Traceable:</strong> Requirements can be traced to their sources</li>
+                        <li><strong>Prioritized:</strong> Requirements are ranked by importance</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Q.4 Requirements Elicitation Techniques -->
+            <section id="q4" class="question-section">
+                <h2>Q.4. Discuss various requirements elicitation techniques</h2>
+                
+                <div class="model-section">
+                    <h3>Requirements Elicitation Techniques</h3>
+                    <p>Requirements elicitation is the process of gathering, discovering, and understanding the requirements of a system from stakeholders. It is a critical phase in software development that ensures the system meets user needs and expectations.</p>
+                    
+                    <div class="techniques-grid">
+                        <div class="technique-card">
+                            <h4>1. Interviews</h4>
+                            <p><strong>Description:</strong> One-on-one or group conversations with stakeholders to gather information.</p>
+                            <p><strong>Types:</strong></p>
+                            <ul>
+                                <li><strong>Structured Interviews:</strong> Predefined questions</li>
+                                <li><strong>Unstructured Interviews:</strong> Open-ended discussions</li>
+                                <li><strong>Semi-structured Interviews:</strong> Combination of both</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Direct communication, detailed information, clarification of doubts</p>
+                            <p><strong>Disadvantages:</strong> Time-consuming, may be biased, requires skilled interviewers</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>2. Questionnaires/Surveys</h4>
+                            <p><strong>Description:</strong> Written questions distributed to a large number of stakeholders.</p>
+                            <p><strong>Types:</strong></p>
+                            <ul>
+                                <li>Open-ended questions</li>
+                                <li>Closed-ended questions</li>
+                                <li>Multiple-choice questions</li>
+                                <li>Rating scales</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Cost-effective, reaches many people, anonymous responses</p>
+                            <p><strong>Disadvantages:</strong> Low response rate, limited depth, no immediate clarification</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>3. Brainstorming</h4>
+                            <p><strong>Description:</strong> Group technique to generate creative ideas and solutions.</p>
+                            <p><strong>Process:</strong></p>
+                            <ul>
+                                <li>Define the problem</li>
+                                <li>Generate ideas without criticism</li>
+                                <li>Evaluate and prioritize ideas</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Creative solutions, diverse perspectives, team building</p>
+                            <p><strong>Disadvantages:</strong> May be dominated by vocal participants, requires facilitation</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>4. Observation</h4>
+                            <p><strong>Description:</strong> Watching users perform their tasks in their natural environment.</p>
+                            <p><strong>Types:</strong></p>
+                            <ul>
+                                <li><strong>Passive Observation:</strong> Observer watches without interference</li>
+                                <li><strong>Active Observation:</strong> Observer interacts and asks questions</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Real-world context, discovers implicit requirements, identifies problems</p>
+                            <p><strong>Disadvantages:</strong> Time-consuming, may affect user behavior, requires access</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>5. Prototyping</h4>
+                            <p><strong>Description:</strong> Building a working model or mockup of the system to gather feedback.</p>
+                            <p><strong>Types:</strong></p>
+                            <ul>
+                                <li><strong>Throwaway Prototypes:</strong> Discarded after feedback</li>
+                                <li><strong>Evolutionary Prototypes:</strong> Evolved into final system</li>
+                                <li><strong>Low-fidelity:</strong> Paper sketches, wireframes</li>
+                                <li><strong>High-fidelity:</strong> Interactive mockups</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Visual representation, early feedback, clarifies requirements</p>
+                            <p><strong>Disadvantages:</strong> May create false expectations, time-consuming, cost</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>6. Workshops</h4>
+                            <p><strong>Description:</strong> Structured group sessions with multiple stakeholders to gather requirements.</p>
+                            <p><strong>Components:</strong></p>
+                            <ul>
+                                <li>Facilitator</li>
+                                <li>Stakeholders</li>
+                                <li>Agenda</li>
+                                <li>Documentation</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Fast, collaborative, consensus building, comprehensive</p>
+                            <p><strong>Disadvantages:</strong> Requires coordination, may have conflicts, time constraints</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>7. Document Analysis</h4>
+                            <p><strong>Description:</strong> Reviewing existing documents to extract requirements.</p>
+                            <p><strong>Sources:</strong></p>
+                            <ul>
+                                <li>Existing system documentation</li>
+                                <li>Business process documents</li>
+                                <li>Policy documents</li>
+                                <li>User manuals</li>
+                                <li>Reports and forms</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Comprehensive information, historical context, cost-effective</p>
+                            <p><strong>Disadvantages:</strong> May be outdated, incomplete, requires interpretation</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>8. Focus Groups</h4>
+                            <p><strong>Description:</strong> Moderated group discussions with selected stakeholders.</p>
+                            <p><strong>Process:</strong></p>
+                            <ul>
+                                <li>Select participants</li>
+                                <li>Moderate discussion</li>
+                                <li>Record and analyze responses</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Diverse perspectives, group dynamics, efficient</p>
+                            <p><strong>Disadvantages:</strong> May be dominated by few, groupthink, requires moderation</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>9. Use Cases</h4>
+                            <p><strong>Description:</strong> Describing system interactions from user's perspective.</p>
+                            <p><strong>Components:</strong></p>
+                            <ul>
+                                <li>Actors</li>
+                                <li>Use case scenarios</li>
+                                <li>Preconditions</li>
+                                <li>Postconditions</li>
+                                <li>Main flow and alternate flows</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> User-centric, clear scenarios, comprehensive coverage</p>
+                            <p><strong>Disadvantages:</strong> May miss non-functional requirements, requires expertise</p>
+                        </div>
+
+                        <div class="technique-card">
+                            <h4>10. Joint Application Development (JAD)</h4>
+                            <p><strong>Description:</strong> Intensive workshop sessions involving all stakeholders.</p>
+                            <p><strong>Participants:</strong></p>
+                            <ul>
+                                <li>Facilitator</li>
+                                <li>Stakeholders</li>
+                                <li>Developers</li>
+                                <li>Scribe</li>
+                            </ul>
+                            <p><strong>Advantages:</strong> Fast, comprehensive, consensus, reduces errors</p>
+                            <p><strong>Disadvantages:</strong> Requires commitment, coordination challenges, cost</p>
+                        </div>
+                    </div>
+
+                    <h4>Best Practices for Requirements Elicitation:</h4>
+                    <ul>
+                        <li>Use multiple techniques for comprehensive coverage</li>
+                        <li>Involve all relevant stakeholders</li>
+                        <li>Document everything clearly and consistently</li>
+                        <li>Validate requirements with stakeholders</li>
+                        <li>Prioritize requirements</li>
+                        <li>Manage conflicts and resolve disagreements</li>
+                        <li>Maintain traceability</li>
+                        <li>Review and refine requirements iteratively</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Software Engineering Models & Concepts. Educational Resource.</p>
+        </footer>
+    </div>
+</body>
+</html>
